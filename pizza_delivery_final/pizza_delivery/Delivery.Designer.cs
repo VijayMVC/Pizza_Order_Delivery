@@ -41,7 +41,7 @@
             this.DorderView.Location = new System.Drawing.Point(51, 43);
             this.DorderView.Name = "DorderView";
             this.DorderView.RowTemplate.Height = 40;
-            this.DorderView.Size = new System.Drawing.Size(2297, 866);
+            this.DorderView.Size = new System.Drawing.Size(3035, 866);
             this.DorderView.TabIndex = 0;
             // 
             // statusCombo2
@@ -50,7 +50,7 @@
             this.statusCombo2.Items.AddRange(new object[] {
             "delivering",
             "delivered"});
-            this.statusCombo2.Location = new System.Drawing.Point(292, 1028);
+            this.statusCombo2.Location = new System.Drawing.Point(293, 1084);
             this.statusCombo2.Name = "statusCombo2";
             this.statusCombo2.Size = new System.Drawing.Size(177, 39);
             this.statusCombo2.TabIndex = 1;
@@ -58,7 +58,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 1031);
+            this.label1.Location = new System.Drawing.Point(45, 1091);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(172, 32);
             this.label1.TabIndex = 2;
@@ -66,7 +66,7 @@
             // 
             // btnDU
             // 
-            this.btnDU.Location = new System.Drawing.Point(560, 1028);
+            this.btnDU.Location = new System.Drawing.Point(582, 1072);
             this.btnDU.Name = "btnDU";
             this.btnDU.Size = new System.Drawing.Size(190, 61);
             this.btnDU.TabIndex = 3;
@@ -78,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2397, 1176);
+            this.ClientSize = new System.Drawing.Size(3133, 1176);
             this.Controls.Add(this.btnDU);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.statusCombo2);

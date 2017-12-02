@@ -39,12 +39,12 @@
             this.CusData.Location = new System.Drawing.Point(89, 85);
             this.CusData.Name = "CusData";
             this.CusData.RowTemplate.Height = 40;
-            this.CusData.Size = new System.Drawing.Size(1697, 697);
+            this.CusData.Size = new System.Drawing.Size(3153, 814);
             this.CusData.TabIndex = 0;
             // 
             // btnC
             // 
-            this.btnC.Location = new System.Drawing.Point(89, 866);
+            this.btnC.Location = new System.Drawing.Point(89, 1003);
             this.btnC.Name = "btnC";
             this.btnC.Size = new System.Drawing.Size(262, 51);
             this.btnC.TabIndex = 3;
@@ -56,7 +56,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1913, 1017);
+            this.ClientSize = new System.Drawing.Size(3184, 1405);
             this.Controls.Add(this.btnC);
             this.Controls.Add(this.CusData);
             this.Name = "customer_management";

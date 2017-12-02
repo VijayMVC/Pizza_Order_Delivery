@@ -41,12 +41,12 @@
             this.TorderView.Location = new System.Drawing.Point(53, 36);
             this.TorderView.Name = "TorderView";
             this.TorderView.RowTemplate.Height = 40;
-            this.TorderView.Size = new System.Drawing.Size(2070, 903);
+            this.TorderView.Size = new System.Drawing.Size(3167, 903);
             this.TorderView.TabIndex = 0;
             // 
             // btnUs
             // 
-            this.btnUs.Location = new System.Drawing.Point(541, 1015);
+            this.btnUs.Location = new System.Drawing.Point(553, 1032);
             this.btnUs.Name = "btnUs";
             this.btnUs.Size = new System.Drawing.Size(231, 76);
             this.btnUs.TabIndex = 1;
@@ -57,7 +57,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(53, 1015);
+            this.label1.Location = new System.Drawing.Point(47, 1059);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(172, 32);
             this.label1.TabIndex = 2;
@@ -69,7 +69,7 @@
             this.statusCombo.Items.AddRange(new object[] {
             "cooking",
             "cooked"});
-            this.statusCombo.Location = new System.Drawing.Point(265, 1015);
+            this.statusCombo.Location = new System.Drawing.Point(267, 1052);
             this.statusCombo.Name = "statusCombo";
             this.statusCombo.Size = new System.Drawing.Size(199, 39);
             this.statusCombo.TabIndex = 3;
@@ -78,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2194, 1132);
+            this.ClientSize = new System.Drawing.Size(3042, 1132);
             this.Controls.Add(this.statusCombo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnUs);

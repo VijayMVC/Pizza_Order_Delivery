@@ -20,9 +20,6 @@ namespace pizza_delivery
         decimal reward_small;
         decimal reward_medium;
         decimal reward_large;
-
-        
-        
         int order_id;
         decimal tax_rate = 0.05m;
         //use list to store the selected pizza and topping for later to reverse the amount when cancel the order
@@ -37,6 +34,9 @@ namespace pizza_delivery
        
         private void Form1_Load(object sender, EventArgs e)
         {
+            //this.TopMost = true;
+            //this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
 
             connectionString = @"Data Source=SUSU\SQLEXPRESS;Initial Catalog=pizza_dilivery;Integrated Security=True";
             connection = new SqlConnection(connectionString);
@@ -73,7 +73,9 @@ namespace pizza_delivery
                 cmd.Parameters.AddWithValue("@d", txtAddre.Text);
                 int lastID = (int)cmd.ExecuteScalar();
                 txtID.Text = lastID.ToString();
+                txtReward.Text = "0.00";
                 connection.Close();
+                
             }
         }
         //search customer through user name input and autofill the textbox
@@ -82,24 +84,31 @@ namespace pizza_delivery
             if (connection != null)
             {
                 connection.Open();
-                string query = "SELECT id,phone,addre,reward FROM customer ";
                 if (txtFname.Text.Length > 0 && txtLname.Text.Length > 0)
-                
                 {
+                    string query = "SELECT id,phone,addre,reward FROM customer ";
                     query += " WHERE firstName = '" + txtFname.Text + "'";
                     query += " AND lastName = '" + txtLname.Text + "'";
-                }
-                SqlCommand cmd = new SqlCommand(query, connection);
-                SqlDataReader dataReader = cmd.ExecuteReader();
-                while (dataReader.Read())
-                {
-                    txtID.Text = dataReader["id"].ToString();
-                    txtPhone.Text = dataReader["phone"].ToString();
-                    txtAddre.Text = dataReader["addre"].ToString();
-                    txtReward.Text = dataReader["reward"].ToString();
 
+                    SqlCommand cmd = new SqlCommand(query, connection);
+                    SqlDataReader dataReader = cmd.ExecuteReader();
+                    while (dataReader.Read())
+                    {
+                        txtID.Text = dataReader["id"].ToString();
+                        txtPhone.Text = dataReader["phone"].ToString();
+                        txtAddre.Text = dataReader["addre"].ToString();
+                        txtReward.Text = dataReader["reward"].ToString();
+
+                    }
+                    dataReader.Close();
+                    RewardResult();
+                    //disable the search once the first search is finished
+                    
                 }
-                dataReader.Close();
+                else
+                {
+                    MessageBox.Show("please input both the first and last name!");
+                }
                 connection.Close();
 
             }
@@ -123,6 +132,11 @@ namespace pizza_delivery
         //generate new order and fill the orderID textbox
         private void btnNewOrder_Click(object sender, EventArgs e)
         {
+            //disable three customer query buttons
+            btnAddC.Enabled = false;
+            btnSearch.Enabled = false;
+            btnUpdate.Enabled = false;
+
             if (connection != null)
             {
                 connection.Open();
@@ -131,9 +145,9 @@ namespace pizza_delivery
                 cmd.Parameters.AddWithValue("@a", int.Parse(txtID.Text));
                 order_id = (int)cmd.ExecuteScalar();
                 txtOrderID.Text = order_id.ToString();
-                RewardResult();
+                //RewardResult();
                 connection.Close();
-                
+                btnNewOrder.Enabled = false;
             }
           
 
@@ -153,20 +167,27 @@ namespace pizza_delivery
                 if (rewards >= reward_small && rewards < reward_medium)
                 {
                     txtR.Text = "small";
+                    
                 }
                 else if (rewards >= reward_medium && rewards < reward_large)
                 {
                     txtR.Text = "medium";
+                   
                 }
                 else if (rewards >= reward_large)
                 {
                     txtR.Text = "large";
-
+                    
                 }
-
+                else
+                {
+                    txtR.Text = null;
+                }
+                
             }
         }
 
+        
         private void pizzaCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             string sPizza;
@@ -764,7 +785,7 @@ namespace pizza_delivery
                 txtTprice.Text = total_price.ToString();
                 txtTax.Text = (total_price * tax_rate).ToString();
                 UpdateTprice();
-                PurchaseReward();
+                plus_Reward();
                 txtAT.Text = total_price.ToString();
                 QueryOrder();
                 connection.Close();
@@ -784,10 +805,11 @@ namespace pizza_delivery
             cmd.ExecuteNonQuery();
         }
 
-        //update reward 
-        void PurchaseReward()
+        //plus reward when new order submitted
+        void plus_Reward()
         {
             string instruction;
+            /*
             if(txtReward.Text != String.Empty)
             {
                 instruction = "UPDATE customer SET reward = reward + @rewards WHERE id = @CusID ";
@@ -797,7 +819,8 @@ namespace pizza_delivery
             {
                 instruction = "UPDATE customer SET reward = @rewards WHERE id = @CusID ";
             }
-            
+            */
+            instruction = "UPDATE customer SET reward = reward + @rewards WHERE id = @CusID ";
             decimal rewards;
             rewards = total_price / 10;
             int CusID = int.Parse(txtID.Text);
@@ -806,7 +829,21 @@ namespace pizza_delivery
             cmd.Parameters.AddWithValue("@CusID", CusID);
             cmd.ExecuteNonQuery();
         }
-           
+
+        //reverse reward after order cancelled
+        void ReverseReward()
+        {
+    
+            decimal rewards = Convert.ToDecimal(txtReward.Text); 
+            int CusID = int.Parse(txtID.Text);
+            string instruction = "UPDATE customer SET reward = @rewards ";
+            instruction += " WHERE id = @CusID ";
+            SqlCommand cmd = new SqlCommand(instruction, connection);
+            cmd.Parameters.AddWithValue("@CusID", CusID);
+            cmd.Parameters.AddWithValue("@rewards", rewards);
+            cmd.ExecuteNonQuery();
+        }
+
         //query order information from order_pizza, order_side, order_drink tables
         void QueryOrder()
         {
@@ -854,8 +891,9 @@ namespace pizza_delivery
                 orderView.DataSource = null;
                 orderView.Rows.Clear();
                 ReverseReward();
-                
+                btnReset_Click(sender, e);
                 connection.Close();
+                
             }
         }
         //delete order_drink row of the order_id
@@ -988,7 +1026,13 @@ namespace pizza_delivery
             ToppingIDC.Clear();
             txtR.Clear();
             total_price = 0m;
-
+            //restore all the function buttons when reset
+            btnSearch.Enabled = true;
+            btnAddC.Enabled = true;
+            btnUpdate.Enabled = true;
+            btnNewOrder.Enabled = true;
+            btnRedeem.Enabled = true;
+            
 
         }
 
@@ -1041,13 +1085,18 @@ namespace pizza_delivery
                             //later to reverse when it is canceled
                             PizzaIDC.Add(pizza_id);
                             QueryOrder();
-                            UpdateReward();
+                            minus_Reward();
+                            btnRedeem.Enabled = false;
 
+                        }
+                        else
+                        {
+                            MessageBox.Show("please choose a differnt pizza to redeem!");
                         }
                         
                     }
                     else
-                        MessageBox.Show("please select a pizza!");
+                        MessageBox.Show("please select a pizza to redeem!");
                 }
                 else
                     MessageBox.Show("no pizza available to redeem");
@@ -1056,7 +1105,7 @@ namespace pizza_delivery
             }
         }
         //update reward after redeem
-        void UpdateReward()
+        void minus_Reward()
         {
             string redeemSize = txtR.Text;
             decimal redeemPoint = 0m;
@@ -1083,25 +1132,13 @@ namespace pizza_delivery
                 
             
        }
-       //update reward after cancel the redeem
-        void ReverseReward()
-        {
-            decimal rewards = Convert.ToDecimal(txtReward.Text);
-            int CusID = int.Parse(txtID.Text);
-            string instruction = "UPDATE customer SET reward = @rewards ";
-                   instruction += " WHERE id = @CusID ";
-            SqlCommand cmd = new SqlCommand(instruction, connection);
-            cmd.Parameters.AddWithValue("@CusID", CusID);
-            cmd.Parameters.AddWithValue("@rewards", rewards);
-            cmd.ExecuteNonQuery();
-        }
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
             customer_management customer = new customer_management();
             customer.Show();
         }
-        
+
         
     }//form
 }//namespace

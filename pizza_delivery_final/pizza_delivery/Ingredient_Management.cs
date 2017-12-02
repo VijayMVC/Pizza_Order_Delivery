@@ -25,6 +25,7 @@ namespace pizza_delivery
         private void Ingredient_Management_Load(object sender, EventArgs e)
         {
             //try to connect with database
+            this.WindowState = FormWindowState.Maximized;
             connectionString = @"Data Source=SUSU\SQLEXPRESS;Initial Catalog=pizza_dilivery;Integrated Security=True";
             connection = new SqlConnection(connectionString);
             if (connection != null)

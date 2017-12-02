@@ -47,7 +47,7 @@
             // 
             // btnUp
             // 
-            this.btnUp.Location = new System.Drawing.Point(673, 227);
+            this.btnUp.Location = new System.Drawing.Point(836, 252);
             this.btnUp.Name = "btnUp";
             this.btnUp.Size = new System.Drawing.Size(172, 57);
             this.btnUp.TabIndex = 2;
@@ -65,7 +65,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(257, 252);
+            this.label2.Location = new System.Drawing.Point(314, 252);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(335, 32);
             this.label2.TabIndex = 9;
@@ -74,7 +74,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(263, 331);
+            this.label3.Location = new System.Drawing.Point(314, 337);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(324, 32);
             this.label3.TabIndex = 10;
@@ -83,7 +83,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(263, 411);
+            this.label4.Location = new System.Drawing.Point(324, 432);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(303, 32);
             this.label4.TabIndex = 11;
@@ -93,7 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1630, 957);
+            this.ClientSize = new System.Drawing.Size(3049, 1131);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

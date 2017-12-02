@@ -25,6 +25,7 @@ namespace pizza_delivery
 
         public void Rewarding_Management_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             connectionString = @"Data Source=SUSU\SQLEXPRESS;Initial Catalog=pizza_dilivery;Integrated Security=True";
             connection = new SqlConnection(connectionString);
             connection.Open();
@@ -53,7 +54,7 @@ namespace pizza_delivery
         {
             reward_small = decimal.Parse(txtUnit.Text);
             UpdateReward();
-
+            MessageBox.Show("new rewards system have been updated!");
             
         }
     }

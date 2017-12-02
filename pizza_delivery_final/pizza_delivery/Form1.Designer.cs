@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.txtR = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -67,7 +69,6 @@
             this.chkCheese = new System.Windows.Forms.CheckBox();
             this.chkOnion = new System.Windows.Forms.CheckBox();
             this.chkBlack = new System.Windows.Forms.CheckBox();
-            this.chkTomato = new System.Windows.Forms.CheckBox();
             this.btnLarge = new System.Windows.Forms.RadioButton();
             this.pizzaCombo = new System.Windows.Forms.ComboBox();
             this.chkMush = new System.Windows.Forms.CheckBox();
@@ -75,7 +76,6 @@
             this.chkPepper = new System.Windows.Forms.CheckBox();
             this.btnSmall = new System.Windows.Forms.RadioButton();
             this.chkSpinach = new System.Windows.Forms.CheckBox();
-            this.chkPine = new System.Windows.Forms.CheckBox();
             this.chkChicken = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
             this.chkRoni = new System.Windows.Forms.CheckBox();
@@ -93,6 +93,8 @@
             this.chkS = new System.Windows.Forms.CheckBox();
             this.chkL = new System.Windows.Forms.CheckBox();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.chkTomato = new System.Windows.Forms.CheckBox();
+            this.chkPine = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnReward = new System.Windows.Forms.Button();
             this.btnIngredient = new System.Windows.Forms.Button();
@@ -101,7 +103,6 @@
             this.btnKitchen = new System.Windows.Forms.Button();
             this.btnDelivery = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
-            this.lstOrder = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -113,6 +114,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.txtR);
             this.groupBox1.Controls.Add(this.txtID);
             this.groupBox1.Controls.Add(this.label13);
@@ -131,16 +134,35 @@
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(1080, 156);
+            this.groupBox1.Location = new System.Drawing.Point(1440, 178);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1122, 515);
+            this.groupBox1.Size = new System.Drawing.Size(1795, 515);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer information";
+ 
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(1018, 342);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(90, 32);
+            this.label16.TabIndex = 15;
+            this.label16.Text = "pizza!";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(593, 342);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(194, 32);
+            this.label15.TabIndex = 14;
+            this.label15.Text = "can redeem a ";
             // 
             // txtR
             // 
-            this.txtR.Location = new System.Drawing.Point(486, 329);
+            this.txtR.Location = new System.Drawing.Point(793, 333);
             this.txtR.Name = "txtR";
             this.txtR.Size = new System.Drawing.Size(205, 38);
             this.txtR.TabIndex = 13;
@@ -207,7 +229,7 @@
             this.txtAddre.Multiline = true;
             this.txtAddre.Name = "txtAddre";
             this.txtAddre.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtAddre.Size = new System.Drawing.Size(872, 76);
+            this.txtAddre.Size = new System.Drawing.Size(1600, 76);
             this.txtAddre.TabIndex = 1;
             // 
             // txtPhone
@@ -342,7 +364,7 @@
             // 
             // btnRedeem
             // 
-            this.btnRedeem.Location = new System.Drawing.Point(0, 432);
+            this.btnRedeem.Location = new System.Drawing.Point(25, 451);
             this.btnRedeem.Name = "btnRedeem";
             this.btnRedeem.Size = new System.Drawing.Size(202, 68);
             this.btnRedeem.TabIndex = 6;
@@ -352,7 +374,7 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(539, 1198);
+            this.btnReset.Location = new System.Drawing.Point(822, 1199);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(202, 63);
             this.btnReset.TabIndex = 6;
@@ -372,14 +394,14 @@
             this.groupBox2.Controls.Add(this.btnReset);
             this.groupBox2.Location = new System.Drawing.Point(12, 43);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1053, 1286);
+            this.groupBox2.Size = new System.Drawing.Size(1402, 1286);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Place the order";
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(285, 1196);
+            this.btnCancel.Location = new System.Drawing.Point(496, 1196);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(181, 66);
             this.btnCancel.TabIndex = 13;
@@ -412,7 +434,6 @@
             this.groupBox5.Controls.Add(this.chkCheese);
             this.groupBox5.Controls.Add(this.chkOnion);
             this.groupBox5.Controls.Add(this.chkBlack);
-            this.groupBox5.Controls.Add(this.chkTomato);
             this.groupBox5.Controls.Add(this.btnLarge);
             this.groupBox5.Controls.Add(this.pizzaCombo);
             this.groupBox5.Controls.Add(this.chkMush);
@@ -420,21 +441,20 @@
             this.groupBox5.Controls.Add(this.chkPepper);
             this.groupBox5.Controls.Add(this.btnSmall);
             this.groupBox5.Controls.Add(this.chkSpinach);
-            this.groupBox5.Controls.Add(this.chkPine);
             this.groupBox5.Controls.Add(this.chkChicken);
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.chkRoni);
             this.groupBox5.Controls.Add(this.chkBacon);
             this.groupBox5.Location = new System.Drawing.Point(9, 181);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(1038, 453);
+            this.groupBox5.Size = new System.Drawing.Size(1401, 453);
             this.groupBox5.TabIndex = 10;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "pizza";
             // 
             // btnNewp
             // 
-            this.btnNewp.Location = new System.Drawing.Point(234, 371);
+            this.btnNewp.Location = new System.Drawing.Point(300, 368);
             this.btnNewp.Name = "btnNewp";
             this.btnNewp.Size = new System.Drawing.Size(157, 53);
             this.btnNewp.TabIndex = 11;
@@ -483,7 +503,7 @@
             // chkOnion
             // 
             this.chkOnion.AutoSize = true;
-            this.chkOnion.Location = new System.Drawing.Point(378, 185);
+            this.chkOnion.Location = new System.Drawing.Point(490, 185);
             this.chkOnion.Name = "chkOnion";
             this.chkOnion.Size = new System.Drawing.Size(124, 36);
             this.chkOnion.TabIndex = 1;
@@ -493,22 +513,12 @@
             // chkBlack
             // 
             this.chkBlack.AutoSize = true;
-            this.chkBlack.Location = new System.Drawing.Point(597, 185);
+            this.chkBlack.Location = new System.Drawing.Point(813, 187);
             this.chkBlack.Name = "chkBlack";
             this.chkBlack.Size = new System.Drawing.Size(187, 36);
             this.chkBlack.TabIndex = 1;
             this.chkBlack.Text = "black olive";
             this.chkBlack.UseVisualStyleBackColor = true;
-            // 
-            // chkTomato
-            // 
-            this.chkTomato.AutoSize = true;
-            this.chkTomato.Location = new System.Drawing.Point(859, 185);
-            this.chkTomato.Name = "chkTomato";
-            this.chkTomato.Size = new System.Drawing.Size(140, 36);
-            this.chkTomato.TabIndex = 1;
-            this.chkTomato.Text = "tomato";
-            this.chkTomato.UseVisualStyleBackColor = true;
             // 
             // btnLarge
             // 
@@ -561,7 +571,7 @@
             // chkPepper
             // 
             this.chkPepper.AutoSize = true;
-            this.chkPepper.Location = new System.Drawing.Point(378, 253);
+            this.chkPepper.Location = new System.Drawing.Point(487, 244);
             this.chkPepper.Name = "chkPepper";
             this.chkPepper.Size = new System.Drawing.Size(189, 36);
             this.chkPepper.TabIndex = 1;
@@ -582,27 +592,17 @@
             // chkSpinach
             // 
             this.chkSpinach.AutoSize = true;
-            this.chkSpinach.Location = new System.Drawing.Point(597, 253);
+            this.chkSpinach.Location = new System.Drawing.Point(813, 244);
             this.chkSpinach.Name = "chkSpinach";
             this.chkSpinach.Size = new System.Drawing.Size(152, 36);
             this.chkSpinach.TabIndex = 1;
             this.chkSpinach.Text = "spinach";
             this.chkSpinach.UseVisualStyleBackColor = true;
             // 
-            // chkPine
-            // 
-            this.chkPine.AutoSize = true;
-            this.chkPine.Location = new System.Drawing.Point(859, 253);
-            this.chkPine.Name = "chkPine";
-            this.chkPine.Size = new System.Drawing.Size(179, 36);
-            this.chkPine.TabIndex = 1;
-            this.chkPine.Text = "pineapple";
-            this.chkPine.UseVisualStyleBackColor = true;
-            // 
             // chkChicken
             // 
             this.chkChicken.AutoSize = true;
-            this.chkChicken.Location = new System.Drawing.Point(597, 309);
+            this.chkChicken.Location = new System.Drawing.Point(813, 309);
             this.chkChicken.Name = "chkChicken";
             this.chkChicken.Size = new System.Drawing.Size(265, 36);
             this.chkChicken.TabIndex = 1;
@@ -621,7 +621,7 @@
             // chkRoni
             // 
             this.chkRoni.AutoSize = true;
-            this.chkRoni.Location = new System.Drawing.Point(378, 309);
+            this.chkRoni.Location = new System.Drawing.Point(487, 309);
             this.chkRoni.Name = "chkRoni";
             this.chkRoni.Size = new System.Drawing.Size(181, 36);
             this.chkRoni.TabIndex = 1;
@@ -647,14 +647,14 @@
             this.groupBox4.Controls.Add(this.chkCP);
             this.groupBox4.Location = new System.Drawing.Point(12, 716);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1047, 156);
+            this.groupBox4.Size = new System.Drawing.Size(1398, 156);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "side";
             // 
             // btnAddS
             // 
-            this.btnAddS.Location = new System.Drawing.Point(773, 80);
+            this.btnAddS.Location = new System.Drawing.Point(1235, 88);
             this.btnAddS.Name = "btnAddS";
             this.btnAddS.Size = new System.Drawing.Size(157, 53);
             this.btnAddS.TabIndex = 11;
@@ -675,7 +675,7 @@
             // chkBC
             // 
             this.chkBC.AutoSize = true;
-            this.chkBC.Location = new System.Drawing.Point(386, 22);
+            this.chkBC.Location = new System.Drawing.Point(810, 13);
             this.chkBC.Name = "chkBC";
             this.chkBC.Size = new System.Drawing.Size(287, 36);
             this.chkBC.TabIndex = 1;
@@ -695,7 +695,7 @@
             // chkCP
             // 
             this.chkCP.AutoSize = true;
-            this.chkCP.Location = new System.Drawing.Point(386, 97);
+            this.chkCP.Location = new System.Drawing.Point(810, 97);
             this.chkCP.Name = "chkCP";
             this.chkCP.Size = new System.Drawing.Size(260, 36);
             this.chkCP.TabIndex = 1;
@@ -711,14 +711,14 @@
             this.groupBox3.Controls.Add(this.chkL);
             this.groupBox3.Location = new System.Drawing.Point(12, 952);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1041, 154);
+            this.groupBox3.Size = new System.Drawing.Size(1392, 154);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "drink";
             // 
             // btnAddD
             // 
-            this.btnAddD.Location = new System.Drawing.Point(773, 78);
+            this.btnAddD.Location = new System.Drawing.Point(1241, 78);
             this.btnAddD.Name = "btnAddD";
             this.btnAddD.Size = new System.Drawing.Size(157, 53);
             this.btnAddD.TabIndex = 11;
@@ -739,7 +739,7 @@
             // chkO
             // 
             this.chkO.AutoSize = true;
-            this.chkO.Location = new System.Drawing.Point(383, 37);
+            this.chkO.Location = new System.Drawing.Point(810, 46);
             this.chkO.Name = "chkO";
             this.chkO.Size = new System.Drawing.Size(218, 36);
             this.chkO.TabIndex = 1;
@@ -759,7 +759,7 @@
             // chkL
             // 
             this.chkL.AutoSize = true;
-            this.chkL.Location = new System.Drawing.Point(383, 112);
+            this.chkL.Location = new System.Drawing.Point(810, 118);
             this.chkL.Name = "chkL";
             this.chkL.Size = new System.Drawing.Size(170, 36);
             this.chkL.TabIndex = 1;
@@ -768,13 +768,33 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(11, 1196);
+            this.btnSubmit.Location = new System.Drawing.Point(160, 1196);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(202, 63);
             this.btnSubmit.TabIndex = 6;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
+            // chkTomato
+            // 
+            this.chkTomato.AutoSize = true;
+            this.chkTomato.Location = new System.Drawing.Point(1126, 409);
+            this.chkTomato.Name = "chkTomato";
+            this.chkTomato.Size = new System.Drawing.Size(140, 36);
+            this.chkTomato.TabIndex = 1;
+            this.chkTomato.Text = "tomato";
+            this.chkTomato.UseVisualStyleBackColor = true;
+            // 
+            // chkPine
+            // 
+            this.chkPine.AutoSize = true;
+            this.chkPine.Location = new System.Drawing.Point(1126, 477);
+            this.chkPine.Name = "chkPine";
+            this.chkPine.Size = new System.Drawing.Size(179, 36);
+            this.chkPine.TabIndex = 1;
+            this.chkPine.Text = "pineapple";
+            this.chkPine.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -787,9 +807,9 @@
             // 
             // btnReward
             // 
-            this.btnReward.Location = new System.Drawing.Point(1733, 56);
+            this.btnReward.Location = new System.Drawing.Point(2411, 50);
             this.btnReward.Name = "btnReward";
-            this.btnReward.Size = new System.Drawing.Size(194, 56);
+            this.btnReward.Size = new System.Drawing.Size(180, 62);
             this.btnReward.TabIndex = 6;
             this.btnReward.Text = "Rewarding";
             this.btnReward.UseVisualStyleBackColor = true;
@@ -797,9 +817,9 @@
             // 
             // btnIngredient
             // 
-            this.btnIngredient.Location = new System.Drawing.Point(1533, 56);
+            this.btnIngredient.Location = new System.Drawing.Point(2120, 50);
             this.btnIngredient.Name = "btnIngredient";
-            this.btnIngredient.Size = new System.Drawing.Size(167, 56);
+            this.btnIngredient.Size = new System.Drawing.Size(167, 62);
             this.btnIngredient.TabIndex = 1;
             this.btnIngredient.Text = "Ingredient";
             this.btnIngredient.UseVisualStyleBackColor = true;
@@ -807,8 +827,6 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.lstOrder);
-            this.groupBox7.Controls.Add(this.orderView);
             this.groupBox7.Controls.Add(this.btnRedeem);
             this.groupBox7.Controls.Add(this.label7);
             this.groupBox7.Controls.Add(this.txtTprice);
@@ -816,9 +834,9 @@
             this.groupBox7.Controls.Add(this.label4);
             this.groupBox7.Controls.Add(this.txtTax);
             this.groupBox7.Controls.Add(this.label8);
-            this.groupBox7.Location = new System.Drawing.Point(1080, 699);
+            this.groupBox7.Location = new System.Drawing.Point(1440, 699);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(1426, 630);
+            this.groupBox7.Size = new System.Drawing.Size(1804, 630);
             this.groupBox7.TabIndex = 7;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "order and bill";
@@ -826,15 +844,15 @@
             // orderView
             // 
             this.orderView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.orderView.Location = new System.Drawing.Point(34, 48);
+            this.orderView.Location = new System.Drawing.Point(1519, 747);
             this.orderView.Name = "orderView";
             this.orderView.RowTemplate.Height = 40;
-            this.orderView.Size = new System.Drawing.Size(1357, 379);
+            this.orderView.Size = new System.Drawing.Size(1692, 379);
             this.orderView.TabIndex = 9;
             // 
             // btnKitchen
             // 
-            this.btnKitchen.Location = new System.Drawing.Point(1098, 56);
+            this.btnKitchen.Location = new System.Drawing.Point(1440, 50);
             this.btnKitchen.Name = "btnKitchen";
             this.btnKitchen.Size = new System.Drawing.Size(181, 62);
             this.btnKitchen.TabIndex = 8;
@@ -844,7 +862,7 @@
             // 
             // btnDelivery
             // 
-            this.btnDelivery.Location = new System.Drawing.Point(1321, 56);
+            this.btnDelivery.Location = new System.Drawing.Point(1787, 50);
             this.btnDelivery.Name = "btnDelivery";
             this.btnDelivery.Size = new System.Drawing.Size(181, 62);
             this.btnDelivery.TabIndex = 9;
@@ -854,38 +872,31 @@
             // 
             // btnCustomer
             // 
-            this.btnCustomer.Location = new System.Drawing.Point(1973, 56);
+            this.btnCustomer.Location = new System.Drawing.Point(2678, 50);
             this.btnCustomer.Name = "btnCustomer";
-            this.btnCustomer.Size = new System.Drawing.Size(173, 56);
+            this.btnCustomer.Size = new System.Drawing.Size(173, 62);
             this.btnCustomer.TabIndex = 10;
             this.btnCustomer.Text = "Customer";
             this.btnCustomer.UseVisualStyleBackColor = true;
             this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
-            // lstOrder
-            // 
-            this.lstOrder.FormattingEnabled = true;
-            this.lstOrder.ItemHeight = 31;
-            this.lstOrder.Location = new System.Drawing.Point(147, 540);
-            this.lstOrder.Name = "lstOrder";
-            this.lstOrder.Size = new System.Drawing.Size(10, 35);
-            this.lstOrder.TabIndex = 10;
-            this.lstOrder.Visible = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2380, 1344);
+            this.ClientSize = new System.Drawing.Size(2977, 1344);
+            this.Controls.Add(this.orderView);
             this.Controls.Add(this.btnCustomer);
             this.Controls.Add(this.btnDelivery);
             this.Controls.Add(this.btnKitchen);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.btnReward);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.chkTomato);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnIngredient);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.chkPine);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -982,7 +993,8 @@
         private System.Windows.Forms.Button btnDelivery;
         private System.Windows.Forms.TextBox txtR;
         private System.Windows.Forms.Button btnCustomer;
-        private System.Windows.Forms.ListBox lstOrder;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
     }
 }
 

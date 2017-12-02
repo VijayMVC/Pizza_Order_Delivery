@@ -39,10 +39,10 @@
             // ingreData
             // 
             this.ingreData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ingreData.Location = new System.Drawing.Point(68, 121);
+            this.ingreData.Location = new System.Drawing.Point(68, 159);
             this.ingreData.Name = "ingreData";
             this.ingreData.RowTemplate.Height = 40;
-            this.ingreData.Size = new System.Drawing.Size(1437, 670);
+            this.ingreData.Size = new System.Drawing.Size(3131, 721);
             this.ingreData.TabIndex = 0;
             // 
             // label1
@@ -57,7 +57,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(74, 862);
+            this.label2.Location = new System.Drawing.Point(74, 921);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 32);
             this.label2.TabIndex = 2;
@@ -65,14 +65,14 @@
             // 
             // txtAmout
             // 
-            this.txtAmout.Location = new System.Drawing.Point(68, 926);
+            this.txtAmout.Location = new System.Drawing.Point(68, 988);
             this.txtAmout.Name = "txtAmout";
             this.txtAmout.Size = new System.Drawing.Size(235, 38);
             this.txtAmout.TabIndex = 3;
             // 
             // btnUpdateI
             // 
-            this.btnUpdateI.Location = new System.Drawing.Point(376, 921);
+            this.btnUpdateI.Location = new System.Drawing.Point(442, 979);
             this.btnUpdateI.Name = "btnUpdateI";
             this.btnUpdateI.Size = new System.Drawing.Size(136, 47);
             this.btnUpdateI.TabIndex = 4;
@@ -84,7 +84,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1622, 1038);
+            this.ClientSize = new System.Drawing.Size(3184, 1038);
             this.Controls.Add(this.btnUpdateI);
             this.Controls.Add(this.txtAmout);
             this.Controls.Add(this.label2);

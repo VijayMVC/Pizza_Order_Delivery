@@ -23,6 +23,7 @@ namespace pizza_delivery
 
         private void Kitchen_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             connectionString = @"Data Source=SUSU\SQLEXPRESS;Initial Catalog=pizza_dilivery;Integrated Security=True";
             connection = new SqlConnection(connectionString);
             connection.Open();
